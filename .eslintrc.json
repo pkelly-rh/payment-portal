@@ -1,0 +1,87 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "prefer-const": "off",
+    "prefer-rest-params": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "use-isnan": "off",
+    "no-useless-escape": "off",
+    "no-unsafe-optional-chaining": "off",
+    "no-var": "off",
+    "no-empty": "off",
+    "no-extra-boolean-cast": "off",
+    "no-empty-pattern": "off",
+    "no-case-declarations": "off",
+    "no-constant-condition": "off",
+    "no-prototype-builtins": "off",
+    "react/no-unescaped-entities": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "react/jsx-key": "off",
+    "react/display-name": "off",
+    "react/jsx-no-target-blank": "off",
+    "react/no-unknown-property": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-children-prop": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-misused-new": "off",
+    "import/no-unresolved": "off",
+    "import/no-duplicates": "off",
+    "import/no-named-as-default": "off",
+    "import/named": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": ["**/aem/types/sdk/**"],
+  "overrides": [
+    {
+      /* Turns off typescript rules for js files. ie webpack.config.js and node scripts */
+      "files": ["*.js"],
+      "rules": {
+        "no-undef": 0,
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/no-empty-function": 0
+      }
+    }
+  ]
+}

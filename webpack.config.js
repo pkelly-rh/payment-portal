@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -16,6 +17,14 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          // "sass-loader", // compiles Sass to CSS, using Node Sass by default
+        ],
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.eot$|\.woff$|\.woff2$|\.ttf$|\.wav$|\.mp3$/,
@@ -41,10 +50,13 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       hash: true,
-      title: "React Boilerplate",
+      title: "Payment Portal",
       template: "./src/index.html",
       filename: "./index.html",
     }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
+    })
   ],
   output: {
     path: path.resolve(__dirname, "dist"),

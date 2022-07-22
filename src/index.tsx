@@ -10,6 +10,6 @@ if (module && module.hot) {
 }
 
 render(
-  <App message={"< ReactBoilerplate />"} />,
+  <App />,
   document.getElementById("root")
 );
